@@ -8,11 +8,46 @@
 	</style>
 </head>
 <body>
-<svg class="cannon" width="100" height="100">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+<svg class="cannon" width="200" height="200">
+  <rect class="graphContainer" height="200" width="200" stroke="green" stroke-width="2" fill="yellow" />
+  <line class="yAxis" x1="0" y1="100" x2="200" y2="100" stroke="green" stroke-width="2"/>
+  <line class="xAxis" x1="100" y1="0" x2="100" y2="200" stroke="green" stroke-width="2"/>
 </svg>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
+(function(){
+	var Graph =function(){
+		var defaultSetting = {
+			height : 200,
+			width : 200,
+			color : "yellow",
+			axisColor: "green",
+			plotColor: "red",
+			scale : {
+				"xAxis":{
+					"1Unit":"1px"
+				},
+				"yAxis":{
+					"1Unit":"1px"
+				}
+			}
+		};
+		var init = function(params){
+			if(arguments.length !==0 && (typeof params==="object"){
+				for(var prop in params){
+					defaultSetting[prop]=params[prop];
+				}
+			}
+		};
+		var draw = function(){
+			
+		};
+
+		return {
+			init : init,
+			draw : draw
+		};
+	}
+})();
 	
 </script>
 </body>
