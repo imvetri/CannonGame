@@ -3,16 +3,16 @@
  */
 
 (function(){
-    /* Example FnExp
+    /* Example FunctionExpression
     *   if X+Y = 1
-    *   then FnExp = 1-Y
-    *   FnExp = function(){return 1-Y}
+    *   then FunctionExpression = 1-Y
+    *   FunctionExpression = function(){return 1-Y}
     */
-    var FnExp = function(){
+    var FunctionExpression = function(){
         return (1-y);
     };
-    var getXFrom = function(FnExp,y){
-        return FnExp(y);
+    var getXFrom = function(FunctionExpression,y){
+        return FunctionExpression(y);
     };
 
     var p = [];
@@ -21,7 +21,7 @@
 
 
     for(var y=-50 ; y< 50 ; y++){
-        var x = getXFrom(FnExp,y);
+        var x = getXFrom(FunctionExpression,y);
         p.push(new Point(x,y));
 
     }
