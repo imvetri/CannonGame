@@ -94,6 +94,22 @@
         };
     })();
 
+    var Point = function(x,y){
+        this.x = x;
+        this.y = y;
+
+        if(!Point.prototype.origin){
+            Point.prototype.origin = this;
+        }
+        else{
+            //update point w.r.t origin
+            this.x += Point.prototype.origin.x;
+            this.y += Point.prototype.origin.y;
+        }
+        return this;
+    };
+
+
     graph.init("graph");
     graph.draw({
         "name":'circle',
@@ -102,5 +118,11 @@
         r:0.5,
         stroke:'black'
     });
+
+    var origin = new Point(100, 100);
+    console.log(origin);
+    var a = new Point(1, 0);
+    console.log(a);
+
 
 })();
