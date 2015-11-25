@@ -17,7 +17,7 @@
 
     var p = [];
     //setting origin
-    p.push(new Point(100,100));
+    var origin = new Point(100,100);
 
 
     for(var y=-50 ; y< 50 ; y++){
